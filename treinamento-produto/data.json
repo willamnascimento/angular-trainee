@@ -1,0 +1,38 @@
+{
+  "produtos": [
+    {
+      "Id": 1,
+      "Nome": "Produto 1",
+      "Valor": 190.59,
+      "Ativo": true
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 5,
+      "body": "some commen111t",
+      "postId": 1
+    },
+    {
+      "id": 6,
+      "body": "some commen111t",
+      "postId": 1,
+      "teste": "dsfsdfsd"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

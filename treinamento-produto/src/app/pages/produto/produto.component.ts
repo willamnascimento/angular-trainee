@@ -1,3 +1,5 @@
+import { ProdutoService } from './../../shared/services/produto/produto.service';
+import { IProduto } from './../../shared/entities/index';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,19 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoComponent implements OnInit {
 
-  sortedData: any;
+  sortedData: IProduto[];
+  
 
-  constructor() { 
-    this.sortedData = [{
-      Id: 1,
-      Nome: "Produto 1"
-    },{
-      Id: 2,
-      Nome: "Produto 2"
-    }];
+  constructor(private produtoService: ProdutoService) { 
+    
   }
 
   ngOnInit(): void {
+    this.produtoService.getAll().subscribe((ret: IProduto[]) => {
+      this.sortedData = ret;
+    })
   }
 
 }
