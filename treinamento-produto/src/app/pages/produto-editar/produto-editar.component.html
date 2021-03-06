@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>Editar Produto</mat-card-title>
+    <form [formGroup]="formulario">
+        <input type="hidden" formControlName="Id" />
+        <div class="form-group">
+            <label class="control-label col-md-2">Nome</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" formControlName="Nome">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Valor</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" formControlName="Valor">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Ativo</label>
+            <div class="col-md-10">
+                <input type="checkbox" class="form-control" formControlName="Ativo">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-success" [disabled]="!formulario.valid" (click)="editar()"/>
+                <a class="btn btn-danger" href="/produto" >Cancelar</a>
+            </div>
+        </div>
+    </form>
+</mat-card>

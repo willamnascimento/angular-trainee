@@ -1,6 +1,7 @@
 import { ProdutoService } from './../../shared/services/produto/produto.service';
 import { IProduto } from './../../shared/entities/index';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-produto',
@@ -9,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutoComponent implements OnInit {
 
-  sortedData: IProduto[];
+  sortedData: IProduto[] = [];
   
 
-  constructor(private produtoService: ProdutoService) { 
+  constructor(
+    private produtoService: ProdutoService, 
+    public dialog: MatDialog) { 
     
   }
 
@@ -21,5 +24,5 @@ export class ProdutoComponent implements OnInit {
       this.sortedData = ret;
     })
   }
-
+  
 }

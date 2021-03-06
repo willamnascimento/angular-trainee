@@ -5,7 +5,7 @@
   
   <div class="container">
     <div class="row">
-      
+      <a class="btn btn-success" href="/produto-novo">Novo Produto</a>
     </div>
     <table class="table">
         <thead>
@@ -23,7 +23,8 @@
                 <td>{{item.Nome}}</td>
                 <td>{{item.Valor}}</td>
                 <td>{{item.Ativo}}</td>
-                <td></td>
+                <td><a class="btn btn-info" href="/produto-editar/{{item.Id}}">Editar</a>
+                    <a class="btn btn-danger">Remover</a></td>
             </tr>
         </tbody>
     </table>
